@@ -61,3 +61,48 @@ z = x ** 2
 z = x > 0
 # print(z)
 
+# matrix operations:
+
+x1 = torch.rand((2,5))
+x2 = torch.rand((5,3))
+
+x3 = torch.mm(x1, x2) # matrix multiplication
+x3 = x1.mm(x2) # matrix multiplication
+
+print(x3)
+
+# matrix exponentiation
+matrix_exp = torch.rand(5,5)
+print(matrix_exp)
+matrix_exp.matrix_power(3)
+print(matrix_exp)
+
+# element wise multiplication 
+z = x * y
+print(z)
+z = x.mul(y)
+print(z)
+z = x.mul_(y)
+print(z)
+
+# dot product
+z = torch.dot(x, y)
+print(z)
+
+# batch matrix multiplication
+batch = 32
+n = 10
+m = 20
+p = 30
+
+tensor1 = torch.rand((batch, n, m)) # 32 matrices of size 10x20
+tensor2 = torch.rand((batch, m, p)) # 32 matrices of size 20x30
+
+out = torch.bmm(tensor1, tensor2) # 32 matrices of size 10x30
+
+#to access second row of the first matrix of the batch:
+first = out[0][1]
+print(first)
+
+
+
