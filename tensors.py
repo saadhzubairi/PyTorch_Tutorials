@@ -42,14 +42,25 @@ x7 = torch.empty(size=(1,5)).normal_(mean=0, std=1) # creates a tensor with rand
 x8 = torch.empty(size=(1,5)).uniform_(0,1) # creates a tensor with random values from a uniform distribution between 0 and 1
 x9 = torch.diag(torch.ones(3)) # creates a diagonal matrix with ones on the diagonal
 
-print(f"0: {x0}")
-print(f"1: {x1}")
-print(f"2: {x2}")
-print(f"3: {x3}")
-print(f"4: {x4}")
-print(f"5: {x5}")
-print(f"6: {x6}")
-print(f"7: {x7}")
-print(f"8: {x8}")
-print(f"9: {x9}")
+# print(f"0: {x0}")
+# print(f"1: {x1}")
+# print(f"2: {x2}")
+# print(f"3: {x3}")
+# print(f"4: {x4}")
+# print(f"5: {x5}")
+# print(f"6: {x6}")
+# print(f"7: {x7}")
+# print(f"8: {x8}")
+# print(f"9: {x9}")
+
+#now learning some converssion between tensor types (int, float, double, etc)
+
+t = torch.arange(4) # default is int64
+print(f"t {t}, t.dtype {t.dtype}")
+print(f"t.bool() {t.bool()}") # boolean
+print(f"t.short() {t.short()}") # int16
+print(f"t.long() {t.long()}") # int64
+print(f"t.half() {t.half()}") # float16
+print(f"t.float() {t.float()}") # float32
+print(f"t.double() {t.double()}") # float64
 
