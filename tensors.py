@@ -53,10 +53,10 @@ x9 = torch.diag(torch.ones(3)) # creates a diagonal matrix with ones on the diag
 # print(f"8: {x8}")
 # print(f"9: {x9}")
 
-#now learning some converssion between tensor types (int, float, double, etc)
+# Now learning some converssion between tensor types (int, float, double, etc)
 
 t = torch.arange(4) # default is int64
-print(f"t {t}, t.dtype {t.dtype}")
+""" print(f"t {t}, t.dtype {t.dtype}")
 print(f"t.bool() {t.bool()}") # boolean
 print(f"t.short() {t.short()}") # int16
 print(f"t.long() {t.long()}") # int64
@@ -64,3 +64,19 @@ print(f"t.half() {t.half()}") # float16
 print(f"t.float() {t.float()}") # float32
 print(f"t.double() {t.double()}") # float64
 
+ """
+ 
+ # how to convert tensor to numpy array and vice versa
+ 
+import numpy as np
+ 
+np_array = np.ones((5,5))
+tensor = torch.from_numpy(np_array)
+
+print(f"tensor {tensor}")
+print(f"np_array {np_array}")
+
+# now we can convert the tensor back to a numpy array
+np_array_back = tensor.numpy()
+
+print(f"np_array_back {np_array_back}")
